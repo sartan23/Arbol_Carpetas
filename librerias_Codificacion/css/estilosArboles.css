@@ -1,0 +1,31 @@
+#Contenedor{
+	width: 1000px;
+	height: 1000px;
+	background: white;
+}
+
+.Nodo{
+	width: 300px;
+	height: 30px;
+	background:url("./sprint_Line_ Arboles.jpg");	
+	position: relative;
+	margin: 0 0 0 0;
+}
+
+.Nodo2{
+	width: 100px;
+	height: 30px;
+	background:url("./sprint_Line_ Arboles.jpg");	
+	position: relative;
+	left: 150px;
+	top: 20px;
+	margin: 0 0 30px 0;
+}
+
+
+
+.input{
+	width: 30%;
+	height: 50%;
+	background: gray;
+}

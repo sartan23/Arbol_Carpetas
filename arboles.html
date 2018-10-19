@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Arboles</title>
+	<script src="./librerias_Codificacion/jquery/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./librerias_Codificacion/css/estilosArboles.css">
+</head>
+<body>
+	<div id="Contenedor">
+		<input type="button" name="" value="Nuevo" onclick="agregar()">
+	</div>
+<script type="text/javascript">
+  var contador = 0;
+	
+		function agregar(){
+			
+			$("#Contenedor").append('<div id="N' + contador + '" ><input id="E' + contador + '" class="input" type="button" name="" value="-" onclick="eliminar(this)"><input id="A' + contador + '" class="input" type="button" name="" value="+" onclick="agregarNodo(this.parentElement.id)"><input id="F' + contador + '" class="input" type="button" name="" value="-->" onclick="collapse(this)"></div>');
+			$("#Contenedor #N" + contador).addClass('Nodo');
+			contador += 1;
+		}
+
+		function agregarNodo(divActual){
+			
+			$("#Contenedor").find("div#" + divActual).append('<div id="N' + contador + '" class="Nodo2"></div>');
+
+			
+			$("#Contenedor").find('div#N' + contador).append('<input id="E' + contador + '" class="input" type="button" name="" value="-" onclick="eliminar(this)">');
+			$("#Contenedor").find('div#N' + contador).append('<input id="A' + contador + '" class="input" type="button" name="" value="+" onclick="agregarNodo(this.parentElement.id)">');
+			$("#Contenedor").find('div#N' + contador).append('<input id="F' + contador + '" class="input" type="button" name="" value="-->" onclick="collapse(this)">');
+			contador++;
+		}
+
+		function eliminar(inputActual){
+			
+			$("#Contenedor").find('div#' + inputActual.parentElement.id).remove();
+
+
+		}
+</script>
+
+</body>
+
+</html>
