@@ -1,45 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Arboles</title>
-	<script src="./librerias_Codificacion/jquery/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./librerias_Codificacion/css/estilosArboles.css">
-</head>
-<body>
-	<div id="Contenedor">
-		<input type="button" name="" value="Nuevo" onclick="agregar()">
-	</div>
-<script type="text/javascript">
-  var contador = 0;
-	
-		function agregar(){
-			
-			$("#Contenedor").append('<div id="N' + contador + '" ><input id="E' + contador + '" class="input" type="button" name="" value="-" onclick="eliminar(this)"><input id="A' + contador + '" class="input" type="button" name="" value="+" onclick="agregarNodo(this.parentElement.id)"><input id="F' + contador + '" class="input" type="button" name="" value="-->" onclick="collapse(this)"></div>');
-			$("#Contenedor #N" + contador).addClass('Nodo');
-			contador += 1;
-		}
+!DOCTYPE html>
+<html lang="es">
+ <head>
+   <meta charset="UTF-8" />
+   <title>Index</title>
+   <script>
 
-		function agregarNodo(divActual){
-			
-			$("#Contenedor").find("div#" + divActual).append('<div id="N' + contador + '" class="Nodo2"></div>');
+     
+      function crearboton(){
+         var principal = document.getElementById("principal");
+          var nodoC = 0
+         var input = document.createElement("INPUT");         
+         
+         input.type = 'button';
+         input.id = nodoC++;
+          input.value="+"
 
-			
-			$("#Contenedor").find('div#N' + contador).append('<input id="E' + contador + '" class="input" type="button" name="" value="-" onclick="eliminar(this)">');
-			$("#Contenedor").find('div#N' + contador).append('<input id="A' + contador + '" class="input" type="button" name="" value="+" onclick="agregarNodo(this.parentElement.id)">');
-			$("#Contenedor").find('div#N' + contador).append('<input id="F' + contador + '" class="input" type="button" name="" value="-->" onclick="collapse(this)">');
-			contador++;
-		}
+         principal.appendChild(input);
+     
+      } 
 
-		function eliminar(inputActual){
-			
-			$("#Contenedor").find('div#' + inputActual.parentElement.id).remove();
+//function eliminarboton(){
+  //       var principal = document.getElementById("principal");
+    //     var nodoE = 0
+      //   var borrar = document.createElement("borrar");         
+        //  borrar.type = 'button';
+         // principal.appendChild(borrar);
+
+          //borrar.type = 'button';
+         // borrar.id = nodoE++;
+          //borrar.value="+"
+
+//}
 
 
-		}
-</script>
 
-</body>
-
+      window.onload = function(){
+         
+         var agregar_Add = document.getElementById("agregar_p");   
+         agregar_Add.onclick = crearboton;
+//        agregar_Add.onclick = eliminarboton
+      }      
+   </script>
+ </head>
+ <body>
+   <div id="principal">
+      
+   </div>
+   <input type="button" id="agregar_p" value="Agregar">
+ </body>
 </html>
